@@ -1,0 +1,463 @@
+/* h1{
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-family: 'Tourney', cursive;
+} */
+*{
+    margin: 0;
+}
+body{
+    font-family: 'Zen Tokyo Zoo', cursive;
+}
+.navbar{
+    width: 100%;
+    height: 50px;
+    background-color: #55DD33;
+}
+.navbar-container{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+    color: black;
+}
+.logo-container{
+    flex: 1;
+    /* it is short hand for:-
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        flex: 1 means the following:
+flex-grow : 1;    ➜ The div will grow in same proportion as the window-size
+flex-shrink : 1;  ➜ The div will shrink in same proportion as the window-size 
+flex-basis : 0;   ➜ The div does not have a starting value as such and will 
+take up screen as per the screen size available fore.g:- if 3 divs are in the wrapper then each div will take 33%.
+*/
+
+}
+.logo{
+    font-size: 30px;
+}
+.menu-container{
+    flex: 6;
+    /* 6 times size of logo container */
+}
+.menu-list{
+    display: flex;
+    list-style: none;
+    
+}
+.menu-list-items{
+    margin-right: 25px;
+    font-family: 'Tourney', cursive;
+    font-size: 17px;
+    cursor: pointer;
+    padding-bottom: 3px;
+    
+    position: relative;
+}
+.menu-list-items::after{
+    content:'';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 0;
+    bottom:0;
+    background-color: rgb(8, 7, 7);
+    border-bottom: 2px solid black;
+    transition: all ease-in-out .5s;
+  }
+.menu-list-items:hover::after{
+    width: 100%;
+    left: 0;
+  }
+
+.menu-list-items.active{
+    font-weight: bold;
+}
+.profile-container{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    font-family: 'Tourney', cursive;
+    justify-content: flex-end;
+    /* to move profile section in right */
+}
+.profile-text-container{
+    margin: 0 15px;
+    font-size: 17px;
+}
+.toogle{
+    width: 42px;
+    height: 25px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    /* for toogle ball */
+}
+.toogle-icon{
+    color:black;
+    font-size: 17px;
+}
+.toogle-ball{
+    width: 19px;
+    height: 19px;
+    background-color: black;
+    position: absolute;
+    /* it is relative to its parent class */
+    right: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.profile-picture{
+    margin-top: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar{
+    width: 50px;
+    height:auto;
+    background-color: #55DD33;
+    position: fixed;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0px 15px 15px 0px;
+}
+.left-menu-icon{
+    font-size: 20px;
+    color: black;
+    margin-bottom: 37px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+.left-menu-icon:hover{
+    color: white;
+    transform: scale(1.2,1.2);
+}
+.container{
+    background-color:rgb(220, 247, 220);
+    min-height: calc(100vh - 50px);
+    /* if only height then up to only visible page from min-height it will be for all over page we can scroll  */
+}
+.content-container{
+    margin-left: 50px;
+}
+.featured-content1{
+    height: 60vh;
+    padding-top: 160px;
+    padding-left: 100px;
+    background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(220, 247, 220)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(220, 247, 220)),url(pic2.jfif);
+    background-size: cover;
+}
+.featured-content2{
+    height: 60vh;
+    padding-top: 160px;
+    padding-left: 100px;
+    background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(220, 247, 220)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(220, 247, 220)),url(pic6.jpg);
+    background-size: cover;
+    opacity: 0,2;
+    /* linear-gradient(to bottom,rgba(0,0,0,0),80%,rgb(220, 247, 220)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(220, 247, 220)) */
+}
+
+.feature-desc{
+    max-width: 500px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 15px 0px;
+    text-align:justify;
+    font-family: 'Kanit', sans-serif;
+
+
+
+}
+.feature-button{
+    background-color: #55DD33;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+.feature-button:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1,1.1);
+}
+.game-list-container{
+    padding: 20px;
+}
+.game-list-wrapper{
+    position: relative;
+    overflow: hidden;
+    /* to stop the overflow in right side and left both */
+}
+.game-list-title{
+    color: #55DD33;
+    text-transform: uppercase;
+    font-family: 'Tourney', cursive;
+}
+.game-list{
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+   
+}
+.game-list-item{
+    margin-right: 30px;
+    position: relative;
+   
+}
+.game-list-item:hover .game-list-item-image{
+    transform: scale(1.1);
+    margin: 0 20px;
+    opacity: 0.5;
+}
+.game-list-item:hover .game-list-item-title,.game-list-item:hover .game-list-item-desc,.game-list-item:hover .game-list-item-button{
+    opacity: 1;
+
+}
+.game-list-item-image{
+    border-radius: 6px;
+    height: 270px;
+    width: 210px;
+    object-fit: cover;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+.game-list-item-title{
+    background-color: #55DD33;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    /* if this position is absolute parent elemrnt position must be relative here parent element is game-list-item */
+    top: 18%;
+    left: 30px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+    cursor: pointer;
+}
+.game-list-item-desc{
+    background-color: rgb(150, 227, 138);
+    color: black;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    position: absolute;
+    /* if this position is absolute parent elemrnt position must be relative here parent element is game-list-item */
+    top: 30%;
+    left: 30px;
+    width: 170px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+    cursor: pointer;
+}
+.game-list-item-button{
+    padding: 10px;
+    background-color: #55DD33;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 27px;
+    left: 30px;
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+.game-list-item-button:hover{
+
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+.arrow{
+    font-size: 120px;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    color: grey;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.arrow:hover{
+    opacity: .8;
+}
+.credit{
+    font-size: 22px;
+    padding:20px 0px;
+    text-align: center;
+    border-top: 2px solid #55DD33;
+    color: black;
+    font-family: 'Kanit', sans-serif;
+
+}
+/* for black theme */
+.container.active{
+    background-color: black;
+}
+.navbar-container.active{
+    background-color: black;
+    color: #55DD33;
+}
+.sidebar.active{
+    background-color: black;
+}
+.left-menu-icon.active{
+    color: #55DD33;
+}
+.toogle-ball.active{
+    transform: translateX(-20px);
+}
+.featured-content1.active{
+    background:linear-gradient(to bottom,rgba(0,0,0,0),70%,
+    rgb(19, 21, 19)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(7, 8, 7)),url(cover/pic2.jfif);
+    background-size: cover;
+    
+}
+.featured-content2.active{
+    background:linear-gradient(to bottom,rgba(0,0,0,0),70%,
+    rgb(19, 21, 19)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(7, 8, 7)),url(cover/pic6.jpg);
+    background-size: cover;
+    
+}
+.feature-desc.active{
+    color: #55DD33;
+}
+.credit.active{
+    color: #55DD33;
+}
+
+.left-menu-icon:hover{
+    color: white;
+    transform: scale(1.2,1.2);
+}
+.menu-list-items::after{
+    background-color: #55DD33;
+}
+
+
+/* responsive */
+@media only screen and (max-width:940px){
+    .menu-container{
+        display: none;
+    }
+    .feature-desc{
+        font-size: 14px;
+        
+        
+    }
+    .featured-content1{
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    .featured-content2{
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    .credit{
+        font-size: 14px;
+    }
+    .arrow{
+        font-size: 80px;
+    }
+    .featured-content1.active{
+        background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(220, 247, 220)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(220, 247, 220)),url(cover/x11.jpg);
+    background-size: cover;
+    }
+    .featured-content2.active{
+        background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(220, 247, 220)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(220, 247, 220)),url(cover/c2.jpg);
+    background-size: cover;
+    }
+    .featured-content1{
+        background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(220, 247, 220)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(220, 247, 220)),url(cover/x11.jpg);
+    background-size: cover;
+    }
+    .featured-content2{
+        background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(220, 247, 220)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(220, 247, 220)),url(cover/c2.jpg);
+    background-size: cover;
+    }
+    .feature-desc{
+        color:#55DD33;
+    }
+}
+@media only screen and (max-width:500px){
+    .menu-container{
+        display: none;
+    }
+    .feature-desc{
+        font-size: 14px;
+        
+        
+    }
+    .featured-content1{
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    .featured-content2{
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    .credit{
+        font-size: 14px;
+    }
+    .arrow{
+        font-size: 80px;
+    }
+    .featured-content1.active{
+        background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(4, 5, 4)),linear-gradient(to left,rgba(0,0,0,0),90%,
+    rgb(7, 7, 7)),url(cover/x11.jpg);
+    background-size: cover;
+    }
+    .featured-content2.active{
+        background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(0, 0, 0)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(0, 0, 0)),url(cover/c2.jpg);
+    background-size: cover;
+    }
+    .featured-content1{
+        background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(9, 10, 9)),linear-gradient(to left,rgba(0,0,0,0),90%,
+    rgb(11, 12, 11)),url(cover/x11.jpg);
+    background-size: cover;
+    }
+    .featured-content2{
+        background:linear-gradient(to bottom,rgba(0,0,0,0),90%,
+    rgb(0, 0, 0)),linear-gradient(to left,rgba(0,0,0,0),90%,rgb(0, 0, 0)),url(cover/c2.jpg);
+    background-size: cover;
+    }
+    .feature-desc{
+        color:#55DD33;
+    }
+    .sidebar{
+        display: none;
+    }
+    .content-container{
+        margin-left: 0px;
+    }
+}
